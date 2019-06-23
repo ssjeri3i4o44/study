@@ -1,0 +1,4 @@
+2019-01-18 14:16:12,029 DEBUG    Loaded backend module://ipykernel.pylab.backend_inline version unknown.
+2019-01-18 17:28:45,457 INFO     Lgb CV score: 0.00014927
+2019-01-18 17:28:45,468 INFO     Lgb CV score: 0.00002815
+2019-01-18 17:28:47,214 DEBUG    Loaded backend module://ipykernel.pylab.backend_inline version unknown.
