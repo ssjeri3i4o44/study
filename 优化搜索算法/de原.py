@@ -1,22 +1,19 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import random as rd
-import math
-from sklearn.svm import SVC
 import matplotlib.pyplot as plt
-from sklearn import metrics
+plt.rcParams['font.sans-serif'] = ['SimHei']
 import pandas as pd
 from sklearn import model_selection
-import xgboost as xgb
-import time
-import random
 ####导入数据
 import xlrd
 import numpy as np
 #from sklearn import cross_validation
 
+cost_function = np.random.randint(0,100,(5,5))
 #定义适应函数
 def fitness(w):
+    ''''
     [para1, para2, para3, para4,para5] = w
     para2 = int(para2)
     para5 = int(para5)
@@ -26,6 +23,11 @@ def fitness(w):
         random_state=None)
     predict = model_selection.cross_val_predict(clf, X, y, cv=5)
     auc = metrics.roc_auc_score(y,predict)
+    '''
+    [x1,x2,x3,x4,x5] = w
+    for x in w:
+        x = int(x)
+    auc = cost_function[int(x1), int(x2)] + cost_function[int(x2), int(x3)] + cost_function[int(x3), int(x4)] + cost_function[int(x4), int(x5)]
     return auc
 
 #初始化
@@ -70,8 +72,8 @@ def crossover(Xi,vX,D,CR,t,T):       #交叉，得到试验个体
 
 def de_main(m,D,F,CR,T):
     #m种群个数，D是维度，T迭代最大次数
-    xMin = [0.1,0.000001,0.000001,0.000001,1]
-    xMax = [100,100,1,1,149]
+    xMin = [0,0,0,0,0]
+    xMax = [5,5,5,5,5]
     X = initialize(m,D,xMin,xMax)     #初始化
     print("X of start：",X)
     t = 0
@@ -117,9 +119,4 @@ def graph(xx,yy):
     plt.title('DE')
     plt.show()
 
-
-if __name__ == '__main__':
-    X = pd.read_excel('breast.xlsx')
-    y = X[0]
-    del X[0]
-    de_main(10,5,0.3,0.7,100)
+de_main(5,5,0.7,0.7,5)

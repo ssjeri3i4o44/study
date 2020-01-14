@@ -20,6 +20,7 @@ def mutation(X,m,D,i,F,xMin,xMax,bestX,t,T):      #对每个Xi变异
     rand = []
     while True:
         rand = rd.sample(range(m),4)
+        print(rand)
         if i not in rand:
             break
     Fi = F+(t/T)*0.5
