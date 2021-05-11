@@ -6,5 +6,5 @@
 
 [pytorch](https://github.com/ssjeri3i4o44/study/tree/master/Pytorch-learning)
 
-[数据可视化](https://github.com/ssjeri3i4o44/study/tree/master/matplotlib)
+[数据可视化](https://github.com/ssjeri3i4o44/study/tree/master/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96)
 
